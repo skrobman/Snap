@@ -1,52 +1,67 @@
 @use "../../../../../style" as *;
 
-.header-container{
-  padding-top: 20px;
-  padding-bottom: 20px;
+.header-container {
+  padding: 20px 40px;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.logo-div, .navbar, .nav-link, .login-registration {
+  margin: 0;
+  padding: 0;
+}
+
+.logo-div {
+  display: inline-flex;
+  align-items: center;
+
+  img {
+    height: 35px;
+    width: 87px;
+    margin-right: 60px;
+  }
+}
+
+.navbar {
   display: flex;
-
-  .nav{
-    display: flex;
-    align-items: center;
-  }
-
-  .navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+  align-items: center;
+  margin-right: auto;
 }
 
 .nav-link {
   color: $greyColor;
   margin-right: 40px;
   font-size: 18px;
-  cursor: pointer;
+  text-decoration: none;
   display: flex;
   align-items: center;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
 
   &:hover {
     color: $blackColor;
 
     .dropdown-icon {
       fill: $blackColor;
-      stroke: $blackColor
+      stroke: $blackColor;
+    }
+
+    .dropdown-path{
+      fill: #e0e0e0;
     }
   }
 
   .dropdown-icon {
     fill: $greyColor;
     stroke: $greyColor;
-    transition: fill 0.3s ease, stroke 0.3s ease;
-
-    &:hover {
-      fill: $blackColor;
-      stroke: $blackColor;
-    }
-  }
-
-  .login-registration{
-    display: flex;
-    flex-direction: row;
+    margin-left: 8px;
   }
 }

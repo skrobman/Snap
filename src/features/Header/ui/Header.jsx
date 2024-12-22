@@ -1,6 +1,5 @@
 import Logo from './Logo/Logo'
 import NavContainer from './Navigation/NavContainer/NavContainer'
-import LoginButton from './Navigation/LoginButton/LoginButton'
 import RegistrButton from './Navigation/RegistrButton/RegistrButton'
 
 import './Navigation/NavStyles/navigation.scss'

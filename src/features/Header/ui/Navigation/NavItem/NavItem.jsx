@@ -14,7 +14,7 @@ const NavItem = ({label, hasDropdown}) => {
                     <path className="dropdown-path"
                           stroke="#686868"
                           strokeWidth="1.5"
-                          // fill="none"
+                          fill="none"
                           d="m1 1 4 4 4-4"
                     />
                 </svg>
