@@ -1,0 +1,29 @@
+@use "../../../../../style" as *;
+
+.login-registration{
+  display: flex;
+
+  .nav-link{
+    color: $greyColor;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover{
+      color: $blackColor;
+    }
+  }
+
+  .registr-link{
+    color: $greyColor;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 12px 20px;
+    border: 2px solid $greyColor;
+    border-radius: 15px;
+
+    &:hover {
+      color: $blackColor;
+      border: 2px solid $blackColor;
+    }
+  }
+}
