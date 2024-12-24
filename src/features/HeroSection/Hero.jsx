@@ -1,7 +1,11 @@
+import InformationSection from "./ui/InformationSection/InformationSection";
+
 const Hero = () => {
     return (
         <>
-            <h1>Hero Section</h1>
+            <div className="hero-container">
+                <InformationSection />
+            </div>
         </>
     )
 }
