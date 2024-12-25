@@ -62,3 +62,36 @@
 .none{
   display: none;
 }
+
+//Burger
+
+.burger-menu{
+  display: none;
+}
+
+.menu{
+  background-color: $whiteColor;
+  z-index: 1001;
+}
+
+//Media
+
+@media (max-width: 960px) {
+  .navbar{
+    display: none;
+  }
+
+  .nav{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .burger-menu{
+    display: block;
+
+    .navbar{
+      display: block;
+    }
+
+  }
+}

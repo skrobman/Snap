@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./InformationSection.scss";
 
 const InformationSection = () => {
-    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 1440);
+    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 1096);
 
     const images = [
         "images/client-databiz.svg",
@@ -13,7 +13,7 @@ const InformationSection = () => {
 
     useEffect(() => {
         const handleWindowResize = () => {
-            setIsWideScreen(window.innerWidth > 1440);
+            setIsWideScreen(window.innerWidth > 1096);
         };
 
         window.addEventListener('resize', handleWindowResize);

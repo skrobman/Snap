@@ -29,3 +29,16 @@
     }
   }
 }
+
+@media (max-width: 960px) {
+  .login-registration{
+    display: none;
+  }
+  .burger-menu{
+    display: block;
+
+    .login-registration{
+      display: block;
+    }
+  }
+}

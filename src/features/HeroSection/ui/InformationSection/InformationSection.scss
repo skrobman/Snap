@@ -8,7 +8,6 @@
 
   .text-container {
     margin-right: 150px;
-    flex: 1; // Allow the text container to grow on smaller screens
 
     h1 {
       font-weight: 700;
@@ -69,106 +68,133 @@
   }
 
   // Media Queries for Responsiveness
-  @media (max-width: 1096px) {
+
+  @media(max-width: 1440px) {
+    h1{
+      font-size: 45px;
+    }
+
+    p{
+      font-size: 16px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 25px 35px;
+      margin-top: 20px;
+    }
+
+    .background{
+      min-width: 50px;
+    }
+
+    .client-logos {
+      margin-top: 50px;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 1302px) {
     .information-grid {
-      flex-direction: column; // Stack the elements vertically
-      align-items: center; // Center-align items in column layout
-      text-align: center; // Center-align text for smaller screens
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     .background {
-      order: -1; // Move the background image to the top of the layout
-      width: 100%; // Make background image take full width
-      height: 400px; // Adjust height for smaller screens
+      background-image: url('../../../../../public/images/image-hero-mobile.png');
+      order: -1;
+      width: 100%;
+      height: 600px;
     }
 
     .text-container {
-      margin-right: 0; // Remove right margin in column layout
-      text-align: center; // Center-align text
+      margin-right: 0;
+      text-align: center;
 
       h1 {
-        font-size: 40px; // Reduce font size for smaller screens
+        font-size: 40px;
       }
 
       p {
-        font-size: 14px; // Smaller paragraph text
+        font-size: 14px;
       }
 
       button {
-        font-size: 14px; // Smaller button text
-        padding: 19px 29px; // Adjust button padding for smaller screens
-        margin-top: 20px; // Reduce margin top
+        font-size: 14px;
+        padding: 19px 29px;
+        margin-top: 20px;
       }
 
       .client-logos {
         display: flex;
         justify-content: center;
-        margin-top: 50px; // Adjust top margin for smaller screens
-        gap: 20px; // Reduce gap between client logos
+        margin-top: 50px;
+        gap: 20px;
       }
     }
   }
 
   @media (max-width: 768px) {
     .information-grid {
-      flex-direction: column; // Stack the elements vertically
-      align-items: center; // Center-align items
+      flex-direction: column;
+      align-items: center;
     }
 
     .background {
-      order: -1; // Keep the background on top
-      height: 300px; // Further adjust background height for small screens
+      order: -1;
+      height: 300px;
     }
 
     .text-container {
       h1 {
-        font-size: 35px; // Further reduce font size for small screens
+        font-size: 35px;
       }
 
       p {
-        font-size: 13px; // Make paragraph text smaller
+        font-size: 13px;
       }
 
       button {
-        font-size: 13px; // Smaller button text
-        padding: 12px 20px; // Adjust padding for small buttons
+        font-size: 13px;
+        padding: 12px 20px;
       }
 
       .client-logos {
-        margin-top: 40px; // Reduce margin top for smaller screens
-        gap: 10px; // Reduce gap between client logos
+        margin-top: 40px;
+        gap: 10px;
       }
     }
   }
 
   @media (max-width: 480px) {
     .information-grid {
-      flex-direction: column; // Stack the elements vertically
-      align-items: center; // Center-align items
+      flex-direction: column;
+      align-items: center;
     }
 
     .background {
-      order: -1; // Keep the background on top
-      height: 250px; // Further adjust background height for mobile screens
+      order: -1;
+      height: 250px;
     }
 
     .text-container {
       h1 {
-        font-size: 30px; // Make heading even smaller for mobile
+        font-size: 30px;
       }
 
       p {
-        font-size: 12px; // Make the paragraph text even smaller
+        font-size: 12px;
       }
 
       button {
-        font-size: 12px; // Small button text for mobile
-        padding: 10px 15px; // Small padding for mobile buttons
+        font-size: 12px;
+        padding: 10px 15px;
       }
 
       .client-logos {
-        margin-top: 30px; // Further reduce margin top for smaller screens
-        gap: 5px; // Tighten gap between client logos
+        margin-top: 30px;
+        gap: 5px;
       }
     }
   }
