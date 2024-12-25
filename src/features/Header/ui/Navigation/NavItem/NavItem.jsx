@@ -4,13 +4,16 @@ import CompanyMenu from "../../../pop-ups/CompanyMenu";
 import { useState } from 'react';
 
 const NavItem = ({ label, hasDropdown, isFeature = false, isCompany = false }) => {
-    const [isHovered, setIsHovered] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleClick = () => {
+        setIsClicked((prevState) => !prevState);
+    };
 
     return (
         <div
             className="nav-link"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onClick={handleClick}
         >
             <span>{label}</span>
             {hasDropdown && (
@@ -18,9 +21,7 @@ const NavItem = ({ label, hasDropdown, isFeature = false, isCompany = false }) =
                     width="10"
                     height="6"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={(isFeature && hasDropdown && isHovered) ||
-                    (isCompany && hasDropdown && isHovered) ? "dropdown-icon none" : "dropdown-icon show"}
-
+                    className={isClicked ? "dropdown-icon none" : "dropdown-icon show"}
                 >
                     <path
                         stroke="#686868"
@@ -31,7 +32,7 @@ const NavItem = ({ label, hasDropdown, isFeature = false, isCompany = false }) =
                 </svg>
             )}
 
-            {isFeature && hasDropdown && isHovered && (
+            {isFeature && hasDropdown && isClicked && (
                 <>
                     <FeaturesMenu />
                     <svg
@@ -47,11 +48,10 @@ const NavItem = ({ label, hasDropdown, isFeature = false, isCompany = false }) =
                             d="m1 5 4-4 4 4"
                         />
                     </svg>
-
                 </>
-
             )}
-            {isCompany && hasDropdown && isHovered && (
+
+            {isCompany && hasDropdown && isClicked && (
                 <>
                     <CompanyMenu />
                     <svg
@@ -67,7 +67,6 @@ const NavItem = ({ label, hasDropdown, isFeature = false, isCompany = false }) =
                             d="m1 5 4-4 4 4"
                         />
                     </svg>
-
                 </>
             )}
         </div>

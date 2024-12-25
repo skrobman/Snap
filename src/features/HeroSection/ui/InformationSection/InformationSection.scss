@@ -3,9 +3,12 @@
 .information-grid {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; // Ensure elements wrap on smaller screens
+  padding: 20px; // Add padding for smaller screens
 
   .text-container {
     margin-right: 150px;
+    flex: 1; // Allow the text container to grow on smaller screens
 
     h1 {
       font-weight: 700;
@@ -42,6 +45,7 @@
       display: flex;
       gap: 40px;
       align-items: center;
+      flex-wrap: wrap; // Allow logos to wrap
 
       .client-logo {
         opacity: 0.5;
@@ -62,5 +66,110 @@
     background-repeat: no-repeat;
     width: 480px;
     height: 640px;
+  }
+
+  // Media Queries for Responsiveness
+  @media (max-width: 1096px) {
+    .information-grid {
+      flex-direction: column; // Stack the elements vertically
+      align-items: center; // Center-align items in column layout
+      text-align: center; // Center-align text for smaller screens
+    }
+
+    .background {
+      order: -1; // Move the background image to the top of the layout
+      width: 100%; // Make background image take full width
+      height: 400px; // Adjust height for smaller screens
+    }
+
+    .text-container {
+      margin-right: 0; // Remove right margin in column layout
+      text-align: center; // Center-align text
+
+      h1 {
+        font-size: 40px; // Reduce font size for smaller screens
+      }
+
+      p {
+        font-size: 14px; // Smaller paragraph text
+      }
+
+      button {
+        font-size: 14px; // Smaller button text
+        padding: 19px 29px; // Adjust button padding for smaller screens
+        margin-top: 20px; // Reduce margin top
+      }
+
+      .client-logos {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px; // Adjust top margin for smaller screens
+        gap: 20px; // Reduce gap between client logos
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .information-grid {
+      flex-direction: column; // Stack the elements vertically
+      align-items: center; // Center-align items
+    }
+
+    .background {
+      order: -1; // Keep the background on top
+      height: 300px; // Further adjust background height for small screens
+    }
+
+    .text-container {
+      h1 {
+        font-size: 35px; // Further reduce font size for small screens
+      }
+
+      p {
+        font-size: 13px; // Make paragraph text smaller
+      }
+
+      button {
+        font-size: 13px; // Smaller button text
+        padding: 12px 20px; // Adjust padding for small buttons
+      }
+
+      .client-logos {
+        margin-top: 40px; // Reduce margin top for smaller screens
+        gap: 10px; // Reduce gap between client logos
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .information-grid {
+      flex-direction: column; // Stack the elements vertically
+      align-items: center; // Center-align items
+    }
+
+    .background {
+      order: -1; // Keep the background on top
+      height: 250px; // Further adjust background height for mobile screens
+    }
+
+    .text-container {
+      h1 {
+        font-size: 30px; // Make heading even smaller for mobile
+      }
+
+      p {
+        font-size: 12px; // Make the paragraph text even smaller
+      }
+
+      button {
+        font-size: 12px; // Small button text for mobile
+        padding: 10px 15px; // Small padding for mobile buttons
+      }
+
+      .client-logos {
+        margin-top: 30px; // Further reduce margin top for smaller screens
+        gap: 5px; // Tighten gap between client logos
+      }
+    }
   }
 }
