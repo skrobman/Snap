@@ -29,10 +29,12 @@
 .navbar {
   display: flex;
   align-items: center;
+  position: relative;
   margin-right: auto;
 }
 
 .nav-link {
+  position: relative; /* Нужно для абсолютного позиционирования меню */
   color: $greyColor;
   margin-right: 40px;
   font-size: 18px;
@@ -41,27 +43,22 @@
   align-items: center;
   cursor: pointer;
 
-  &:last-child {
-    margin-right: 0;
-  }
-
-
   &:hover {
     color: $blackColor;
-
-    .dropdown-icon {
-      fill: $blackColor;
-      stroke: $blackColor;
-    }
-
-    .dropdown-path{
-      fill: #e0e0e0;
-    }
   }
+
 
   .dropdown-icon {
     fill: $greyColor;
     stroke: $greyColor;
     margin-left: 8px;
   }
+}
+
+.show{
+  display: block;
+}
+
+.none{
+  display: none;
 }

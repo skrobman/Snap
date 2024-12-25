@@ -1,0 +1,41 @@
+@use "../../../../../style" as *;
+
+.features-menu {
+  position: absolute; /* Позиционируем меню */
+  top: 100%; /* Располагаем ниже nav-link */
+  left: 0;
+  margin-top: 8px;
+  z-index: 1000;
+
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    box-shadow: 0px 0px 34px -4px rgba(0, 0, 0, 0.17);
+    background: #fff;
+    list-style: none;
+    padding: 1rem;
+    width: 200px;
+
+    li {
+      cursor: pointer;
+      border: none;
+      color: $greyColor;
+      text-align: left;
+      padding: 0.8rem 1rem; /* Добавлены отступы */
+      transition: background 0.2s ease-in-out;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #f0f0f0; /* Цвет фона при наведении */
+        color: $blackColor;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+      }
+    }
+  }
+}

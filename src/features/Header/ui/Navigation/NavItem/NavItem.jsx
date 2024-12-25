@@ -19,7 +19,7 @@ const NavItem = ({ label, hasDropdown, isFeature = false, isCompany = false }) =
                     height="6"
                     xmlns="http://www.w3.org/2000/svg"
                     className={(isFeature && hasDropdown && isHovered) ||
-                    (isCompany && hasDropdown && isHovered) ? "none dropdown-icon" : "dropdown-icon show"}
+                    (isCompany && hasDropdown && isHovered) ? "dropdown-icon none" : "dropdown-icon show"}
 
                 >
                     <path
