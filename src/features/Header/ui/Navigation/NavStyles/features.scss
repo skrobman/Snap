@@ -22,6 +22,8 @@
       border: none;
       color: $greyColor;
       text-align: left;
+      display: flex;
+      align-items: center;
       padding: 0.8rem 1rem; /* Добавлены отступы */
       transition: background 0.2s ease-in-out;
       font-size: 16px;
@@ -32,9 +34,9 @@
       }
 
       a {
+        margin-left: 12px;
         text-decoration: none;
         color: inherit;
-        font-weight: bold;
       }
     }
   }
