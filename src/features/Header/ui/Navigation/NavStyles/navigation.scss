@@ -1,18 +1,22 @@
 @use "../../../../../style" as *;
 
 .header-container {
+  position: static;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 20px 40px;
+  background: #fff;
+  z-index: 1000;
 
   .nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
   }
-}
-
-.logo-div, .navbar, .nav-link, .login-registration {
-  margin: 0;
-  padding: 0;
 }
 
 .logo-div {
@@ -34,7 +38,7 @@
 }
 
 .nav-link {
-  position: relative; /* Нужно для абсолютного позиционирования меню */
+  position: relative;
   color: $greyColor;
   margin-right: 40px;
   font-size: 18px;
@@ -42,56 +46,98 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: color 0.2s ease;
 
   &:hover {
     color: $blackColor;
   }
 
-
   .dropdown-icon {
-    fill: $greyColor;
-    stroke: $greyColor;
+    fill: currentColor;
+    stroke: currentColor;
     margin-left: 8px;
+    transition: transform 0.2s ease;
+  }
+
+  &.active .dropdown-icon {
+    transform: rotate(180deg);
   }
 }
 
-.show{
-  display: block;
-}
-
-.none{
+.burger-menu {
   display: none;
-}
+  position: relative;
 
-//Burger
+  .burger-icon {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: fixed;
+    right: 40px;
+    top: 20px;
+    z-index: 1100;
+    transition: transform 0.3s ease;
 
-.burger-menu{
-  display: none;
-}
+    &.active {
+      transform: rotate(180deg);
+    }
 
-.menu{
-  background-color: $whiteColor;
-  z-index: 1001;
-}
+    .menu-icon,
+    .close-icon {
+      display: block;
+    }
+  }
 
-//Media
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    background-color: $whiteColor;
+    padding: 80px 40px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
 
-@media (max-width: 960px) {
-  .navbar{
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  .burger-icon svg {
+    display: block;
+  }
+
+  .burger-icon .hidden {
     display: none;
   }
 
-  .nav{
-    display: flex;
-    justify-content: space-between;
+}
+
+@media (max-width: 960px) {
+  .header-container {
+    padding: 20px;
   }
 
-  .burger-menu{
+  .navbar,
+  .login-registration {
+    display: none;
+  }
+
+  .burger-menu {
     display: block;
 
-    .navbar{
-      display: block;
+    svg{
+      z-index: 1100;
     }
 
+    .navbar,
+    .login-registration {
+      display: block;
+    }
   }
 }
