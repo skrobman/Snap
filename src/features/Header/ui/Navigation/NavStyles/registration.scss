@@ -7,27 +7,34 @@
   margin-left: auto;
   height: 100%; // Ensure full height
 
-  .nav-link {
-    margin-right: 0;
-  }
-
-  .registr-link {
-    color: $greyColor;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 12px 20px;
-    border: 2px solid $greyColor;
-    border-radius: 15px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  .buttons-container{
     display: flex;
     align-items: center;
 
-    &:hover {
-      color: $blackColor;
-      border-color: $blackColor;
+    .nav-link {
+      margin-right: 25px;
+    }
+
+    .registr-link {
+      color: $greyColor;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 12px 20px;
+      border: 2px solid $greyColor;
+      border-radius: 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: $blackColor;
+        border-color: $blackColor;
+      }
     }
   }
+
+
 }
 
 @media (max-width: 960px) {
@@ -39,6 +46,17 @@
 
     .login-registration{
       display: block;
+
+      .buttons-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        a{
+          margin-bottom: 10px;
+        }
+      }
+
+
     }
   }
 }
